@@ -46,8 +46,36 @@
             this.Region = new System.Windows.Forms.ComboBox();
             this.Country = new System.Windows.Forms.ComboBox();
             this.Report = new System.Windows.Forms.TabPage();
+            this.rep_discard = new System.Windows.Forms.Button();
+            this.rep_make = new System.Windows.Forms.Button();
+            this.rep_type_of_accident = new System.Windows.Forms.ComboBox();
+            this.rep_object = new System.Windows.Forms.ComboBox();
+            this.rep_settlement = new System.Windows.Forms.ComboBox();
+            this.rep_region = new System.Windows.Forms.ComboBox();
+            this.rep_country = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.date_to = new System.Windows.Forms.DateTimePicker();
+            this.date_from = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.rec_act_price = new System.Windows.Forms.TextBox();
+            this.rec_act_accident_type = new System.Windows.Forms.TextBox();
+            this.rec_act_name = new System.Windows.Forms.TextBox();
+            this.A_accident_types = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.A_object_management = new System.Windows.Forms.GroupBox();
+            this.A_discard = new System.Windows.Forms.Button();
+            this.A_object = new System.Windows.Forms.TextBox();
             this.A_find = new System.Windows.Forms.Button();
             this.A_delete = new System.Windows.Forms.Button();
             this.A_add = new System.Windows.Forms.Button();
@@ -57,42 +85,15 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.Pass = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.TextBox();
-            this.A_object = new System.Windows.Forms.TextBox();
-            this.A_discard = new System.Windows.Forms.Button();
-            this.A_accident_types = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.rec_act_price = new System.Windows.Forms.TextBox();
-            this.rec_act_accident_type = new System.Windows.Forms.TextBox();
-            this.rec_act_name = new System.Windows.Forms.TextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.date_from = new System.Windows.Forms.DateTimePicker();
-            this.date_to = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rep_type_of_accident = new System.Windows.Forms.ComboBox();
-            this.rep_object = new System.Windows.Forms.ComboBox();
-            this.rep_settlement = new System.Windows.Forms.ComboBox();
-            this.rep_region = new System.Windows.Forms.ComboBox();
-            this.rep_country = new System.Windows.Forms.ComboBox();
-            this.rep_make = new System.Windows.Forms.Button();
-            this.rep_discard = new System.Windows.Forms.Button();
+            this.Logout = new System.Windows.Forms.Button();
             this.Admin.SuspendLayout();
             this.Registration.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Report.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.A_object_management.SuspendLayout();
-            this.A_accident_types.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.A_accident_types.SuspendLayout();
+            this.A_object_management.SuspendLayout();
             this.SuspendLayout();
             // 
             // Admin
@@ -287,8 +288,104 @@
             this.Report.Text = "Report";
             this.Report.UseVisualStyleBackColor = true;
             // 
+            // rep_discard
+            // 
+            this.rep_discard.Location = new System.Drawing.Point(6, 312);
+            this.rep_discard.Name = "rep_discard";
+            this.rep_discard.Size = new System.Drawing.Size(167, 23);
+            this.rep_discard.TabIndex = 21;
+            this.rep_discard.Text = "Discard";
+            this.rep_discard.UseVisualStyleBackColor = true;
+            // 
+            // rep_make
+            // 
+            this.rep_make.Location = new System.Drawing.Point(6, 242);
+            this.rep_make.Name = "rep_make";
+            this.rep_make.Size = new System.Drawing.Size(167, 23);
+            this.rep_make.TabIndex = 20;
+            this.rep_make.Text = "Make reports";
+            this.rep_make.UseVisualStyleBackColor = true;
+            // 
+            // rep_type_of_accident
+            // 
+            this.rep_type_of_accident.FormattingEnabled = true;
+            this.rep_type_of_accident.Location = new System.Drawing.Point(6, 117);
+            this.rep_type_of_accident.Name = "rep_type_of_accident";
+            this.rep_type_of_accident.Size = new System.Drawing.Size(167, 21);
+            this.rep_type_of_accident.TabIndex = 19;
+            this.rep_type_of_accident.Text = "Type of accident";
+            // 
+            // rep_object
+            // 
+            this.rep_object.FormattingEnabled = true;
+            this.rep_object.Location = new System.Drawing.Point(6, 90);
+            this.rep_object.Name = "rep_object";
+            this.rep_object.Size = new System.Drawing.Size(167, 21);
+            this.rep_object.TabIndex = 18;
+            this.rep_object.Text = "Object";
+            // 
+            // rep_settlement
+            // 
+            this.rep_settlement.FormattingEnabled = true;
+            this.rep_settlement.Location = new System.Drawing.Point(6, 63);
+            this.rep_settlement.Name = "rep_settlement";
+            this.rep_settlement.Size = new System.Drawing.Size(167, 21);
+            this.rep_settlement.TabIndex = 17;
+            this.rep_settlement.Text = "Settlement";
+            // 
+            // rep_region
+            // 
+            this.rep_region.FormattingEnabled = true;
+            this.rep_region.Location = new System.Drawing.Point(6, 36);
+            this.rep_region.Name = "rep_region";
+            this.rep_region.Size = new System.Drawing.Size(167, 21);
+            this.rep_region.TabIndex = 16;
+            this.rep_region.Text = "Region";
+            // 
+            // rep_country
+            // 
+            this.rep_country.FormattingEnabled = true;
+            this.rep_country.Location = new System.Drawing.Point(6, 9);
+            this.rep_country.Name = "rep_country";
+            this.rep_country.Size = new System.Drawing.Size(167, 21);
+            this.rep_country.TabIndex = 15;
+            this.rep_country.Text = "Country";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "To";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 151);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "From";
+            // 
+            // date_to
+            // 
+            this.date_to.Location = new System.Drawing.Point(6, 208);
+            this.date_to.Name = "date_to";
+            this.date_to.Size = new System.Drawing.Size(167, 20);
+            this.date_to.TabIndex = 12;
+            // 
+            // date_from
+            // 
+            this.date_from.Location = new System.Drawing.Point(6, 167);
+            this.date_from.Name = "date_from";
+            this.date_from.Size = new System.Drawing.Size(167, 20);
+            this.date_from.TabIndex = 11;
+            // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Logout);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.A_accident_types);
             this.tabPage1.Controls.Add(this.A_object_management);
@@ -302,175 +399,6 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Admin";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // A_object_management
-            // 
-            this.A_object_management.Controls.Add(this.A_discard);
-            this.A_object_management.Controls.Add(this.A_object);
-            this.A_object_management.Controls.Add(this.A_find);
-            this.A_object_management.Controls.Add(this.A_delete);
-            this.A_object_management.Controls.Add(this.A_add);
-            this.A_object_management.Controls.Add(this.A_settlement);
-            this.A_object_management.Controls.Add(this.A_region);
-            this.A_object_management.Controls.Add(this.A_country);
-            this.A_object_management.Location = new System.Drawing.Point(6, 6);
-            this.A_object_management.Name = "A_object_management";
-            this.A_object_management.Size = new System.Drawing.Size(155, 329);
-            this.A_object_management.TabIndex = 3;
-            this.A_object_management.TabStop = false;
-            this.A_object_management.Text = "Object management";
-            // 
-            // A_find
-            // 
-            this.A_find.Location = new System.Drawing.Point(6, 258);
-            this.A_find.Name = "A_find";
-            this.A_find.Size = new System.Drawing.Size(139, 23);
-            this.A_find.TabIndex = 6;
-            this.A_find.Text = "Find";
-            this.A_find.UseVisualStyleBackColor = true;
-            // 
-            // A_delete
-            // 
-            this.A_delete.Location = new System.Drawing.Point(6, 229);
-            this.A_delete.Name = "A_delete";
-            this.A_delete.Size = new System.Drawing.Size(139, 23);
-            this.A_delete.TabIndex = 5;
-            this.A_delete.Text = "Delete";
-            this.A_delete.UseVisualStyleBackColor = true;
-            // 
-            // A_add
-            // 
-            this.A_add.Location = new System.Drawing.Point(6, 200);
-            this.A_add.Name = "A_add";
-            this.A_add.Size = new System.Drawing.Size(139, 23);
-            this.A_add.TabIndex = 4;
-            this.A_add.Text = "Add";
-            this.A_add.UseVisualStyleBackColor = true;
-            // 
-            // A_settlement
-            // 
-            this.A_settlement.Location = new System.Drawing.Point(6, 71);
-            this.A_settlement.Name = "A_settlement";
-            this.A_settlement.Size = new System.Drawing.Size(140, 20);
-            this.A_settlement.TabIndex = 2;
-            this.A_settlement.Text = "Settleement";
-            // 
-            // A_region
-            // 
-            this.A_region.Location = new System.Drawing.Point(6, 45);
-            this.A_region.Name = "A_region";
-            this.A_region.Size = new System.Drawing.Size(140, 20);
-            this.A_region.TabIndex = 1;
-            this.A_region.Text = "Region";
-            // 
-            // A_country
-            // 
-            this.A_country.Location = new System.Drawing.Point(6, 19);
-            this.A_country.Name = "A_country";
-            this.A_country.Size = new System.Drawing.Size(140, 20);
-            this.A_country.TabIndex = 0;
-            this.A_country.Text = "Country";
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.Location = new System.Drawing.Point(754, 32);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 2;
-            this.LoginButton.Text = "Login";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // Pass
-            // 
-            this.Pass.Location = new System.Drawing.Point(801, 6);
-            this.Pass.Name = "Pass";
-            this.Pass.PasswordChar = '*';
-            this.Pass.Size = new System.Drawing.Size(100, 20);
-            this.Pass.TabIndex = 1;
-            // 
-            // Login
-            // 
-            this.Login.Location = new System.Drawing.Point(680, 6);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(100, 20);
-            this.Login.TabIndex = 0;
-            this.Login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // A_object
-            // 
-            this.A_object.Location = new System.Drawing.Point(6, 97);
-            this.A_object.Name = "A_object";
-            this.A_object.Size = new System.Drawing.Size(140, 20);
-            this.A_object.TabIndex = 7;
-            this.A_object.Text = "Object";
-            // 
-            // A_discard
-            // 
-            this.A_discard.Location = new System.Drawing.Point(6, 301);
-            this.A_discard.Name = "A_discard";
-            this.A_discard.Size = new System.Drawing.Size(139, 23);
-            this.A_discard.TabIndex = 8;
-            this.A_discard.Text = "Discard";
-            this.A_discard.UseVisualStyleBackColor = true;
-            // 
-            // A_accident_types
-            // 
-            this.A_accident_types.Controls.Add(this.button1);
-            this.A_accident_types.Controls.Add(this.button2);
-            this.A_accident_types.Controls.Add(this.button3);
-            this.A_accident_types.Controls.Add(this.button4);
-            this.A_accident_types.Controls.Add(this.textBox4);
-            this.A_accident_types.Location = new System.Drawing.Point(184, 6);
-            this.A_accident_types.Name = "A_accident_types";
-            this.A_accident_types.Size = new System.Drawing.Size(155, 329);
-            this.A_accident_types.TabIndex = 9;
-            this.A_accident_types.TabStop = false;
-            this.A_accident_types.Text = "Accident types";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Discard";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(6, 258);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Find";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 229);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(6, 200);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(139, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(5, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "Name";
             // 
             // groupBox3
             // 
@@ -488,6 +416,14 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Recommended actions";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(5, 97);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(137, 97);
+            this.richTextBox3.TabIndex = 9;
+            this.richTextBox3.Text = "Description";
             // 
             // button5
             // 
@@ -549,108 +485,183 @@
             this.rec_act_name.TabIndex = 0;
             this.rec_act_name.Text = "Name";
             // 
-            // richTextBox3
+            // A_accident_types
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(5, 97);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(137, 97);
-            this.richTextBox3.TabIndex = 9;
-            this.richTextBox3.Text = "Description";
+            this.A_accident_types.Controls.Add(this.button1);
+            this.A_accident_types.Controls.Add(this.button2);
+            this.A_accident_types.Controls.Add(this.button3);
+            this.A_accident_types.Controls.Add(this.button4);
+            this.A_accident_types.Controls.Add(this.textBox4);
+            this.A_accident_types.Location = new System.Drawing.Point(184, 6);
+            this.A_accident_types.Name = "A_accident_types";
+            this.A_accident_types.Size = new System.Drawing.Size(155, 329);
+            this.A_accident_types.TabIndex = 9;
+            this.A_accident_types.TabStop = false;
+            this.A_accident_types.Text = "Accident types";
             // 
-            // date_from
+            // button1
             // 
-            this.date_from.Location = new System.Drawing.Point(6, 167);
-            this.date_from.Name = "date_from";
-            this.date_from.Size = new System.Drawing.Size(167, 20);
-            this.date_from.TabIndex = 11;
+            this.button1.Location = new System.Drawing.Point(6, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Discard";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // date_to
+            // button2
             // 
-            this.date_to.Location = new System.Drawing.Point(6, 208);
-            this.date_to.Name = "date_to";
-            this.date_to.Size = new System.Drawing.Size(167, 20);
-            this.date_to.TabIndex = 12;
+            this.button2.Location = new System.Drawing.Point(6, 258);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(139, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Find";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "From";
+            this.button3.Location = new System.Drawing.Point(6, 229);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(139, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // button4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "To";
+            this.button4.Location = new System.Drawing.Point(6, 200);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(139, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Add";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // rep_type_of_accident
+            // textBox4
             // 
-            this.rep_type_of_accident.FormattingEnabled = true;
-            this.rep_type_of_accident.Location = new System.Drawing.Point(6, 117);
-            this.rep_type_of_accident.Name = "rep_type_of_accident";
-            this.rep_type_of_accident.Size = new System.Drawing.Size(167, 21);
-            this.rep_type_of_accident.TabIndex = 19;
-            this.rep_type_of_accident.Text = "Type of accident";
+            this.textBox4.Location = new System.Drawing.Point(5, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(140, 20);
+            this.textBox4.TabIndex = 0;
+            this.textBox4.Text = "Name";
             // 
-            // rep_object
+            // A_object_management
             // 
-            this.rep_object.FormattingEnabled = true;
-            this.rep_object.Location = new System.Drawing.Point(6, 90);
-            this.rep_object.Name = "rep_object";
-            this.rep_object.Size = new System.Drawing.Size(167, 21);
-            this.rep_object.TabIndex = 18;
-            this.rep_object.Text = "Object";
+            this.A_object_management.Controls.Add(this.A_discard);
+            this.A_object_management.Controls.Add(this.A_object);
+            this.A_object_management.Controls.Add(this.A_find);
+            this.A_object_management.Controls.Add(this.A_delete);
+            this.A_object_management.Controls.Add(this.A_add);
+            this.A_object_management.Controls.Add(this.A_settlement);
+            this.A_object_management.Controls.Add(this.A_region);
+            this.A_object_management.Controls.Add(this.A_country);
+            this.A_object_management.Location = new System.Drawing.Point(6, 6);
+            this.A_object_management.Name = "A_object_management";
+            this.A_object_management.Size = new System.Drawing.Size(155, 329);
+            this.A_object_management.TabIndex = 3;
+            this.A_object_management.TabStop = false;
+            this.A_object_management.Text = "Object management";
             // 
-            // rep_settlement
+            // A_discard
             // 
-            this.rep_settlement.FormattingEnabled = true;
-            this.rep_settlement.Location = new System.Drawing.Point(6, 63);
-            this.rep_settlement.Name = "rep_settlement";
-            this.rep_settlement.Size = new System.Drawing.Size(167, 21);
-            this.rep_settlement.TabIndex = 17;
-            this.rep_settlement.Text = "Settlement";
+            this.A_discard.Location = new System.Drawing.Point(6, 301);
+            this.A_discard.Name = "A_discard";
+            this.A_discard.Size = new System.Drawing.Size(139, 23);
+            this.A_discard.TabIndex = 8;
+            this.A_discard.Text = "Discard";
+            this.A_discard.UseVisualStyleBackColor = true;
             // 
-            // rep_region
+            // A_object
             // 
-            this.rep_region.FormattingEnabled = true;
-            this.rep_region.Location = new System.Drawing.Point(6, 36);
-            this.rep_region.Name = "rep_region";
-            this.rep_region.Size = new System.Drawing.Size(167, 21);
-            this.rep_region.TabIndex = 16;
-            this.rep_region.Text = "Region";
+            this.A_object.Location = new System.Drawing.Point(6, 97);
+            this.A_object.Name = "A_object";
+            this.A_object.Size = new System.Drawing.Size(140, 20);
+            this.A_object.TabIndex = 7;
+            this.A_object.Text = "Object";
             // 
-            // rep_country
+            // A_find
             // 
-            this.rep_country.FormattingEnabled = true;
-            this.rep_country.Location = new System.Drawing.Point(6, 9);
-            this.rep_country.Name = "rep_country";
-            this.rep_country.Size = new System.Drawing.Size(167, 21);
-            this.rep_country.TabIndex = 15;
-            this.rep_country.Text = "Country";
+            this.A_find.Location = new System.Drawing.Point(6, 258);
+            this.A_find.Name = "A_find";
+            this.A_find.Size = new System.Drawing.Size(139, 23);
+            this.A_find.TabIndex = 6;
+            this.A_find.Text = "Find";
+            this.A_find.UseVisualStyleBackColor = true;
             // 
-            // rep_make
+            // A_delete
             // 
-            this.rep_make.Location = new System.Drawing.Point(6, 242);
-            this.rep_make.Name = "rep_make";
-            this.rep_make.Size = new System.Drawing.Size(167, 23);
-            this.rep_make.TabIndex = 20;
-            this.rep_make.Text = "Make reports";
-            this.rep_make.UseVisualStyleBackColor = true;
+            this.A_delete.Location = new System.Drawing.Point(6, 229);
+            this.A_delete.Name = "A_delete";
+            this.A_delete.Size = new System.Drawing.Size(139, 23);
+            this.A_delete.TabIndex = 5;
+            this.A_delete.Text = "Delete";
+            this.A_delete.UseVisualStyleBackColor = true;
             // 
-            // rep_discard
+            // A_add
             // 
-            this.rep_discard.Location = new System.Drawing.Point(6, 312);
-            this.rep_discard.Name = "rep_discard";
-            this.rep_discard.Size = new System.Drawing.Size(167, 23);
-            this.rep_discard.TabIndex = 21;
-            this.rep_discard.Text = "Discard";
-            this.rep_discard.UseVisualStyleBackColor = true;
+            this.A_add.Location = new System.Drawing.Point(6, 200);
+            this.A_add.Name = "A_add";
+            this.A_add.Size = new System.Drawing.Size(139, 23);
+            this.A_add.TabIndex = 4;
+            this.A_add.Text = "Add";
+            this.A_add.UseVisualStyleBackColor = true;
+            // 
+            // A_settlement
+            // 
+            this.A_settlement.Location = new System.Drawing.Point(6, 71);
+            this.A_settlement.Name = "A_settlement";
+            this.A_settlement.Size = new System.Drawing.Size(140, 20);
+            this.A_settlement.TabIndex = 2;
+            this.A_settlement.Text = "Settleement";
+            // 
+            // A_region
+            // 
+            this.A_region.Location = new System.Drawing.Point(6, 45);
+            this.A_region.Name = "A_region";
+            this.A_region.Size = new System.Drawing.Size(140, 20);
+            this.A_region.TabIndex = 1;
+            this.A_region.Text = "Region";
+            // 
+            // A_country
+            // 
+            this.A_country.Location = new System.Drawing.Point(6, 19);
+            this.A_country.Name = "A_country";
+            this.A_country.Size = new System.Drawing.Size(140, 20);
+            this.A_country.TabIndex = 0;
+            this.A_country.Text = "Country";
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Location = new System.Drawing.Point(705, 32);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.TabIndex = 2;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // Pass
+            // 
+            this.Pass.Location = new System.Drawing.Point(801, 6);
+            this.Pass.Name = "Pass";
+            this.Pass.PasswordChar = '*';
+            this.Pass.Size = new System.Drawing.Size(100, 20);
+            this.Pass.TabIndex = 1;
+            // 
+            // Login
+            // 
+            this.Login.Location = new System.Drawing.Point(680, 6);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(100, 20);
+            this.Login.TabIndex = 0;
+            this.Login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // Logout
+            // 
+            this.Logout.Location = new System.Drawing.Point(801, 31);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(75, 23);
+            this.Logout.TabIndex = 11;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -669,12 +680,12 @@
             this.Report.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.A_object_management.ResumeLayout(false);
-            this.A_object_management.PerformLayout();
-            this.A_accident_types.ResumeLayout(false);
-            this.A_accident_types.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.A_accident_types.ResumeLayout(false);
+            this.A_accident_types.PerformLayout();
+            this.A_object_management.ResumeLayout(false);
+            this.A_object_management.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -738,6 +749,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker date_to;
         private System.Windows.Forms.DateTimePicker date_from;
+        private System.Windows.Forms.Button Logout;
 
     }
 }
