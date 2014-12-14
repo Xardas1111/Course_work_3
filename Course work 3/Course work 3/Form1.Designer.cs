@@ -34,8 +34,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Add_action = new System.Windows.Forms.Button();
             this.Calcel = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Executed_action_text = new System.Windows.Forms.RichTextBox();
+            this.Executed_action_date = new System.Windows.Forms.DateTimePicker();
             this.Type_of_accident = new System.Windows.Forms.ComboBox();
             this.Submit = new System.Windows.Forms.Button();
             this.Discard = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@
             this.date_to = new System.Windows.Forms.DateTimePicker();
             this.date_from = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Logout = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -85,7 +86,6 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.Pass = new System.Windows.Forms.TextBox();
             this.Login = new System.Windows.Forms.TextBox();
-            this.Logout = new System.Windows.Forms.Button();
             this.Admin.SuspendLayout();
             this.Registration.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -143,8 +143,8 @@
             // 
             this.groupBox1.Controls.Add(this.Add_action);
             this.groupBox1.Controls.Add(this.Calcel);
-            this.groupBox1.Controls.Add(this.richTextBox2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.Executed_action_text);
+            this.groupBox1.Controls.Add(this.Executed_action_date);
             this.groupBox1.Location = new System.Drawing.Point(499, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(398, 257);
@@ -160,6 +160,7 @@
             this.Add_action.TabIndex = 13;
             this.Add_action.Text = "Add Action";
             this.Add_action.UseVisualStyleBackColor = true;
+            this.Add_action.Click += new System.EventHandler(this.Add_action_Click);
             // 
             // Calcel
             // 
@@ -170,20 +171,20 @@
             this.Calcel.Text = "Cancel";
             this.Calcel.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // Executed_action_text
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(6, 45);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(386, 177);
-            this.richTextBox2.TabIndex = 11;
-            this.richTextBox2.Text = "Description of the action";
+            this.Executed_action_text.Location = new System.Drawing.Point(6, 45);
+            this.Executed_action_text.Name = "Executed_action_text";
+            this.Executed_action_text.Size = new System.Drawing.Size(386, 177);
+            this.Executed_action_text.TabIndex = 11;
+            this.Executed_action_text.Text = "Description of the action";
             // 
-            // dateTimePicker1
+            // Executed_action_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.Executed_action_date.Location = new System.Drawing.Point(7, 19);
+            this.Executed_action_date.Name = "Executed_action_date";
+            this.Executed_action_date.Size = new System.Drawing.Size(200, 20);
+            this.Executed_action_date.TabIndex = 10;
             // 
             // Type_of_accident
             // 
@@ -214,7 +215,7 @@
             this.Discard.TabIndex = 6;
             this.Discard.Text = "Discard";
             this.Discard.UseVisualStyleBackColor = true;
-            this.Discard.Click += new System.EventHandler(this.Discard_Click);
+            this.Discard.Click += new System.EventHandler(this.Form1_Load);
             // 
             // richTextBox1
             // 
@@ -248,6 +249,7 @@
             this.Settlement.Size = new System.Drawing.Size(167, 21);
             this.Settlement.TabIndex = 2;
             this.Settlement.Text = "Settlement";
+            this.Settlement.TextChanged += new System.EventHandler(this.Settlement_changed);
             // 
             // Region
             // 
@@ -257,6 +259,7 @@
             this.Region.Size = new System.Drawing.Size(167, 21);
             this.Region.TabIndex = 1;
             this.Region.Text = "Region";
+            this.Region.TextChanged += new System.EventHandler(this.Region_changed);
             // 
             // Country
             // 
@@ -266,6 +269,7 @@
             this.Country.Size = new System.Drawing.Size(167, 21);
             this.Country.TabIndex = 0;
             this.Country.Text = "Country";
+            this.Country.TextChanged += new System.EventHandler(this.Country_changed);
             // 
             // Report
             // 
@@ -399,6 +403,15 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Admin";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Logout
+            // 
+            this.Logout.Location = new System.Drawing.Point(801, 31);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(75, 23);
+            this.Logout.TabIndex = 11;
+            this.Logout.Text = "Logout";
+            this.Logout.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -654,15 +667,6 @@
             this.Login.TabIndex = 0;
             this.Login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Logout
-            // 
-            this.Logout.Location = new System.Drawing.Point(801, 31);
-            this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(75, 23);
-            this.Logout.TabIndex = 11;
-            this.Logout.Text = "Logout";
-            this.Logout.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,8 +711,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Add_action;
         private System.Windows.Forms.Button Calcel;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RichTextBox Executed_action_text;
+        private System.Windows.Forms.DateTimePicker Executed_action_date;
         private System.Windows.Forms.TextBox Budget;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox Pass;

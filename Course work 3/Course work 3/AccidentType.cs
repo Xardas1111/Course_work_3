@@ -12,13 +12,12 @@ namespace ConsoleApplication1
     public class AccidentType
     {
         [DataMember]
-        public string name;
+        public string id;
         [DataMember]
-        public List<RecommendedActions> RecommendedActions;
+        public string name;
         public AccidentType() 
         {
-            name = "";
-            RecommendedActions = new List<RecommendedActions>();
+            name = id = "";
         }
     }
 }

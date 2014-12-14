@@ -48,7 +48,7 @@ namespace ConsoleApplication1
         [DataMember]
         public string Date_of_accident;
         [DataMember]
-        List<ExecutedAction> ActionList;
+        public List<ExecutedAction> ActionList;
         public RegistrationForm() 
         {
             Country = "";

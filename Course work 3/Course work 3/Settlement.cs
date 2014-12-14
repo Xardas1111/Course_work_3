@@ -14,16 +14,15 @@ namespace ConsoleApplication1
         [DataMember]
         public string name;
         [DataMember]
-        public List<OBject> Objects;
-        public Settlement(string name, List<OBject> Objects) 
+        public string region;
+        [DataMember]
+        public string id;
+        public Settlement(string name, string region, string id) 
         {
             this.name = name;
-            this.Objects = Objects;
+            this.region = region;
+            this.id = id;
         }
-        public Settlement() 
-        {
-            name = "";
-            Objects = new List<OBject>();
-        }
+        public Settlement() : this("", "", "") { }
     }
 }

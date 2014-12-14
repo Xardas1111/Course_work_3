@@ -12,22 +12,23 @@ namespace ConsoleApplication1
     public class RecommendedActions
     {
         [DataMember]
+        public string id;
+        [DataMember]
         public string name;
         [DataMember]
         public string price;
         [DataMember]
         public string Description;
-        public RecommendedActions() 
-        {
-            name = "";
-            price = "";
-            Description = "";
-        }
-        public RecommendedActions(string name, string price, string Description) 
+        [DataMember]
+        public string AccidentType_id;
+        public RecommendedActions() : this("", "", "", "", "") { }
+        public RecommendedActions(string name, string price, string Description, string AccidentType_id, string id) 
         {
             this.name = name;
             this.price = price;
             this.Description = Description;
+            this.AccidentType_id = AccidentType_id;
+            this.id = id;
         }
     }
 }

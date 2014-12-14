@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver.cs" />
     <Compile Include="Recommended_actions.cs" />
+    <Compile Include="RegData.cs" />
     <Compile Include="Region.cs" />
     <Compile Include="RegistrationForm.cs" />
     <Compile Include="SendingRequest.cs" />

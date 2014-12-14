@@ -13,13 +13,16 @@ namespace ConsoleApplication1
     {
         [DataMember]
         public string name;
-        public OBject() 
-        {
-            name = "";
-        }
-        public OBject(string name) 
+        [DataMember]
+        public string id;
+        [DataMember]
+        public string settlement;
+        public OBject() : this("", "", "") { }
+        public OBject(string name, string id, string settlement) 
         {
             this.name = name;
+            this.id = id;
+            this.settlement = settlement;
         }
     }
 }

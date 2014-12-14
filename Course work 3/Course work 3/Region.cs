@@ -12,19 +12,18 @@ namespace ConsoleApplication1
     public class Region
     {
         [DataMember]
+        public string country;
+        [DataMember]
         public string name;
         [DataMember]
-        List<Settlement> Settlements;
-        public Region(string name, List<Settlement> Settlements) 
+        public string id;
+        public Region(string name, string country, string id) 
         {
             this.name = name;
-            this.Settlements = Settlements;
+            this.id = id;
+            this.country = country;
         }
 
-        public Region() 
-        {
-            name = "";
-            Settlements = new List<Settlement>();
-        }
+        public Region() : this("", "", "") { } 
     }
 }
