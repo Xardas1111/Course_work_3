@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 
-namespace ConsoleApplication1
-{
+namespace Course_work_3
+{   
     [DataContract]
-    public class AccidentType
+    public class Stage
     {
         [DataMember]
-        public string id;
-        [DataMember]
         public string name;
-        public AccidentType() 
+        [DataMember]
+        public string id;
+        public Stage() 
         {
-            name = "";
             id = "";
+            name = "";
+        }
+        public Stage(string name, string id) 
+        {
+            this.id = id;
+            this.name = name;
         }
     }
 }

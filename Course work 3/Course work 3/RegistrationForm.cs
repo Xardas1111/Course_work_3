@@ -17,59 +17,48 @@ namespace ConsoleApplication1
         public string Date;
         [DataMember]
         public string Description;
-        public ExecutedAction(DateTime Date, string Description)
+        [DataMember]
+        public string id;
+        [DataMember]
+        public string registration_form;
+        public ExecutedAction(DateTime Date, string Description, string id, string registration_form)
         {
             this.Description = Description;
-            if (Date == null)
-            {
-                this.Date = "";
-            }
-            else
-            {
-                this.Date = "" + Date.Year + "-" + Date.Month + "-" + Date.Day + "T" + Date.Hour + ":" + Date.Minute + ":" + Date.Second;
-            }
+            this.Date = "" + Date.Year + "-" + Date.Month + "-" + Date.Day + "T" + Date.Hour + ":" + Date.Minute + ":" + Date.Second;
+            this.id = id;
+            this.registration_form = registration_form;
         }
     }
     [DataContract]
     public class RegistrationForm
     {
         [DataMember]
-        public string Country;
+        public string id;
         [DataMember]
-        public string Region;
+        public string stage_id;
         [DataMember]
-        public string Settlement;
+        public string Object_id;
         [DataMember]
-        public string Object;
+        public string Accident_Type_id;
         [DataMember]
-        public string Type;
+        public string located_money;
         [DataMember]
-        public string Budget;
+        public string used_money;
         [DataMember]
-        public string Date_of_accident;
+        public string Date;
         [DataMember]
-        public List<ExecutedAction> ActionList;
+        public string Commentary;
         public RegistrationForm() 
         {
-            Country = "";
-            Region = "";
-            Settlement = "";
-            Object = "";
-            Type = "";
-            Budget = "";
-            this.Date_of_accident = "";
-            ActionList = new List<ExecutedAction>();
+            id = "";
+            stage_id = "";
+            Object_id = "";
+            Accident_Type_id = "";
+            located_money = "";
+            used_money = "";
+            Date = "";
+            Commentary = "";
         }
-        public RegistrationForm(string Country, string Region, string Settlement, string Object, string Type, string Budget, string Date_of_accident, List<ExecutedAction> ActionList) 
-        { 
-            this.Country = Country;
-            this.Region = Region;
-            this.Settlement = Settlement;
-            this.Object = Object;
-            this.Type = Type;
-            this.Budget = Budget;
-            this.Date_of_accident = Date_of_accident;
-            this.ActionList = ActionList;
-        }
+       
     }
 }

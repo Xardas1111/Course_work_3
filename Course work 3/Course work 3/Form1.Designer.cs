@@ -39,7 +39,7 @@
             this.Type_of_accident = new System.Windows.Forms.ComboBox();
             this.Submit = new System.Windows.Forms.Button();
             this.Discard = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Description = new System.Windows.Forms.RichTextBox();
             this.Object = new System.Windows.Forms.ComboBox();
             this.Date = new System.Windows.Forms.DateTimePicker();
             this.Settlement = new System.Windows.Forms.ComboBox();
@@ -117,7 +117,7 @@
             this.Registration.Controls.Add(this.Type_of_accident);
             this.Registration.Controls.Add(this.Submit);
             this.Registration.Controls.Add(this.Discard);
-            this.Registration.Controls.Add(this.richTextBox1);
+            this.Registration.Controls.Add(this.Description);
             this.Registration.Controls.Add(this.Object);
             this.Registration.Controls.Add(this.Date);
             this.Registration.Controls.Add(this.Settlement);
@@ -215,15 +215,15 @@
             this.Discard.TabIndex = 6;
             this.Discard.Text = "Discard";
             this.Discard.UseVisualStyleBackColor = true;
-            this.Discard.Click += new System.EventHandler(this.Form1_Load);
+            this.Discard.Click += new System.EventHandler(this.Discard_Click);
             // 
-            // richTextBox1
+            // Description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(180, 10);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(313, 253);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "Description of the accident";
+            this.Description.Location = new System.Drawing.Point(180, 10);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(313, 253);
+            this.Description.TabIndex = 5;
+            this.Description.Text = "Description of the accident";
             // 
             // Object
             // 
@@ -706,7 +706,7 @@
         private System.Windows.Forms.TabPage Report;
         private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.Button Discard;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox Description;
         private System.Windows.Forms.ComboBox Type_of_accident;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Add_action;
