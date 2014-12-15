@@ -170,6 +170,7 @@
             this.Calcel.TabIndex = 12;
             this.Calcel.Text = "Cancel";
             this.Calcel.UseVisualStyleBackColor = true;
+            this.Calcel.Click += new System.EventHandler(this.Calcel_Click);
             // 
             // Executed_action_text
             // 

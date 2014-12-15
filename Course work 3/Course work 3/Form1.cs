@@ -35,7 +35,9 @@ namespace Course_work_3
 
         private void Discard_Click(object sender, EventArgs e)
         {
-            
+            Country.Text = "Country";
+            Region.Text = "Region";
+            Settlement.Text = "Settlement";
         }
 
         private void Check_Input(object sender, EventArgs e) 
@@ -109,8 +111,20 @@ namespace Course_work_3
             {
                 if (Object.Text == objectlist[i].name) 
                 {
-                    id = objectlist[i].id;
-                    break;
+                    bool key = false;
+                    for (int j = 0; j < settlementlist.Count; j++) 
+                    {
+                        if (objectlist[i].settlement == settlementlist[j].id) 
+                        {
+                            key = true;
+                            id = objectlist[i].id;
+                            break;
+                        }
+                    }
+                    if (key) 
+                    {
+                        break;
+                    }
                 }
             }
             form.Object_id = id;
@@ -126,14 +140,24 @@ namespace Course_work_3
             SendingRequest<RegistrationForm> request = new SendingRequest<RegistrationForm>("set", "RegistrationForm", form);
             Receiver<RegistrationForm> receiver = new Receiver<RegistrationForm>();
             ServerUpp<RegistrationForm, RegistrationForm>(request, ref receiver);
+            form = receiver.data[0];
             for (int i = 0; i < executedactionlist.Count; i++) 
-            { 
-                
+            {
+                executedactionlist[i] = new ExecutedAction(executedactionlist[i].Date, executedactionlist[i].Description, "", form.id);
+                SendingRequest<ExecutedAction> req = new SendingRequest<ExecutedAction>("set", "ExecutedActions", executedactionlist[i]);
+                Receiver<ExecutedAction> rec = new Receiver<ExecutedAction>();
+                ServerUpp<ExecutedAction, ExecutedAction>(req, ref rec);
+                executedactionlist[i] = rec.data[0];
             }
-                if (DialogResult.Yes == MessageBox.Show("Event Registered. Do you want to print a report?", "Result", MessageBoxButtons.YesNo))
+                if (DialogResult.Yes == MessageBox.Show("Event Registered!!1 Do you want to print a report?", "?", MessageBoxButtons.YesNo))
                 {
-
+                    SendingRequest<RecommendedActions> req = new SendingRequest<RecommendedActions>("get", "RecommendedActions", new RecommendedActions("", "", "", form.Accident_Type_id, "")) ;
+                    Receiver<RecommendedActions> rec = new Receiver<RecommendedActions>();
+                    recommendedactionlist = rec.data;
+                    PrintReport(form, Country.Text, Region.Text, Settlement.Text, Object.Text);
+                    recommendedactionlist.Clear();
                 }
+            executedactionlist.Clear();
         }
 
         private void Add_action_Click(object sender, EventArgs e)
@@ -234,12 +258,56 @@ namespace Course_work_3
             var boldfont = FontFactory.GetFont(FontFactory.TIMES_BOLD, 14);
             var font = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 12);
             var doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(@"D:\Document.pdf", FileMode.OpenOrCreate));
+            PdfWriter.GetInstance(doc, new FileStream("Report.pdf", FileMode.OpenOrCreate));
             doc.Open();
             doc.Add(new Phrase("Registered event №" +form.id+" :", boldfont));
-            doc.Add(new Phrase("Country", font));
+            doc.Add(new Phrase("Country: "+country, font));
+            doc.Add(new Phrase("Region: "+region,font));
+            doc.Add(new Phrase("Settlement: " + settlement, font));
+            doc.Add(new Phrase("Object: " + ect, font));
+            string type = "";
+            for (int i = 0; i < typelist.Count; i++) 
+            {
+                if (form.stage_id == typelist[i].id)
+                {
+                    type = typelist[i].name;
+                    break;
+                }
+            }
+            string stage = "";
+            for (int i = 0; i < stagelist.Count; i++)
+            {
+                if (form.stage_id == stagelist[i].id)
+                {
+                    stage = stagelist[i].name;
+                    break;
+                }
+            }
+            doc.Add(new Phrase("Stage: " + stage, font));
+            doc.Add(new Phrase("Type: " + type, font));
+            doc.Add(new Phrase("Located money: " + form.located_money, font));
+            doc.Add(new Phrase("Used money: " + form.used_money, font));
+            doc.Add(new Phrase("Recommended Actions: " + ect, boldfont));
+            for (int i = 0; i < recommendedactionlist.Count; i++) 
+            {
+                doc.Add(new Phrase(recommendedactionlist[i].name + ":",font));
+                doc.Add(new Phrase("Price:" + recommendedactionlist[i].price, font));
+                doc.Add(new Phrase("Description:" + recommendedactionlist[i].Description, font));
+            }
+            doc.Add(new Phrase("Executed Actions: " + ect, boldfont));
+            for (int i = 0; i < executedactionlist.Count; i++)
+            {
+                doc.Add(new Phrase("Date:" + executedactionlist[i].Date, font));
+                doc.Add(new Phrase("Description:" + executedactionlist[i].Description, font));
+            }
             doc.Close();
             Process.Start(@"D:\Document.pdf");
+        }
+
+        private void Calcel_Click(object sender, EventArgs e)
+        {
+            executedactionlist.Clear();
+            Executed_action_text.Text = "Actions erased. Ready for typing";
         }
     }
 }

@@ -28,6 +28,13 @@ namespace ConsoleApplication1
             this.id = id;
             this.registration_form = registration_form;
         }
+        public ExecutedAction(string Date, string Description, string id, string registration_form)
+        {
+            this.Description = Description;
+            this.Date = Date;
+            this.id = id;
+            this.registration_form = registration_form;
+        }
     }
     [DataContract]
     public class RegistrationForm

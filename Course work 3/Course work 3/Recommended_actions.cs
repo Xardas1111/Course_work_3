@@ -20,14 +20,14 @@ namespace ConsoleApplication1
         [DataMember]
         public string Description;
         [DataMember]
-        public string AccidentType_id;
+        public string Accident_Type_id;
         public RecommendedActions() : this("", "", "", "", "") { }
-        public RecommendedActions(string name, string price, string Description, string AccidentType_id, string id) 
+        public RecommendedActions(string name, string price, string Description, string Accident_Type_id, string id) 
         {
             this.name = name;
             this.price = price;
             this.Description = Description;
-            this.AccidentType_id = AccidentType_id;
+            this.Accident_Type_id = Accident_Type_id;
             this.id = id;
         }
     }
